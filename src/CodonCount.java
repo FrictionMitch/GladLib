@@ -52,17 +52,17 @@ public class CodonCount {
         }
     }
 
-    public void test() {
-        int frame = 2;
-        int start = 1;
-        int end = 5;
+    public void test(int frame, int start, int end) {
+//        int frame = 2;
+//        int start = 1;
+//        int end = 5;
         FileResource resource = new FileResource();
         String dnaStrand = "";
         for(String word : resource.words()) {
             dnaStrand += word;
         }
         dnaStrand = dnaStrand.trim().toUpperCase();
-        buildCodonMap(0, dnaStrand);
+        buildCodonMap(frame, dnaStrand);
 //        buildCodonMap(frame, "CGTTCAAGTTCAA");
 //        System.out.println(codonMap);
         System.out.println("Reading frame starting with " + frame +", results in " + codonMap.size() + " unique codons");
