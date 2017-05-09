@@ -13,16 +13,18 @@ public class CodonCount {
     public void buildCodonMap(int start, String dna) {
         codonMap.clear();
         dna = dna.trim();
+        int count = 1;
         for(int i=start; i< dna.length()-2; i++) {
             String codon = dna.substring(i, i+3);
-            int count = 1;
+//            int count = 1;
 //            if(!codonMap.containsKey(dna.substring(i, i+3))) {
             if(!codonMap.containsKey(codon)) {
 //                codonMap.put(dna.substring(i, i + 3), 1);
                 codonMap.put(codon, count);
                 i+=2;
             } else {
-                codonMap.put(codon, count+=1);
+                count++;
+                codonMap.put(codon, count);
                 i+=2;
             }
         }
